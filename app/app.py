@@ -18,10 +18,10 @@ def hello():
     else:
         text = request.form['text']
         random_name = uuid.uuid4().hex
-        path = "static/"+random_name+".png"
-        model = load('model.joblib')
+        path = "app/static/"+random_name+".png"
+        model = load('app/model.joblib')
         inp_np_arr = floats_str_to_np_array(text)
-        make_picture('AgesAndHeights.pkl', model, inp_np_arr, path)
+        make_picture('app/AgesAndHeights.pkl', model, inp_np_arr, path)
         # return render_template('index.html', href=path)
         return render_template('index.html', href='static/base_pic.svg')
 
